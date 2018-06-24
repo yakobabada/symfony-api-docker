@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>Add webUrls</h1>
+    {{ form_start(form) }}
+        <div class="form-group row">
+            <label for="example-text-input" class="col-1 col-form-label">{{ form_label(form.url) }}</label>
+            <div class="col-11">
+                {{ form_widget(form.url, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            {{ form_errors(form.url) }}
+            {{ form_widget(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>WebUrls</h1>
+    <a href="{{ path('web_url_add') }}" class="btn btn-primary">Add new</a>
+    <br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for webUrl in webUrls %}
+        <tr>
+            <th scope="row">{{ webUrl.id }}</th>
+            <td>{{ webUrl.url }}</td>
+            <td><a href="{{ path('web_url_delete', {webUrl: webUrl.id}) }}" class="btn btn-primary">Delete</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
